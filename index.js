@@ -1,5 +1,7 @@
 'use strict'
 
+const fs = require('fs')
+
 const alfy = require('alfy')
 const fzf = require('fuzzysearch')
 
@@ -9,6 +11,37 @@ const getBrowserName = (browser, res) => {
   } else {
     return browser
   }
+}
+
+const getBrowserIcon = name => {
+  const icons = {
+    and_ff: 'firefox',
+    firefox: 'firefox',
+    and_chr: 'chrome',
+
+    chrome: 'chrome',
+
+    ie: 'ie',
+    ie_mob: 'ie',
+
+    edge: 'edge',
+
+    ios_saf: 'safari',
+    safari: 'safari',
+
+    op_mini: 'opera',
+    op_mob: 'opera',
+    opera: 'opera',
+
+    and_qq: 'qq',
+    and_uc: 'uc',
+    android: 'android',
+    baidu: 'baidu',
+    samsung: 'samsung',
+    bb: 'other'
+  }
+  
+  return name in icons ? icons[name] : 'other'
 }
 
 const getFirstUnprefixedVersion = stats => {
@@ -51,14 +84,26 @@ const getCompatibility = res => {
         ...items,
         {
           title: getBrowserName(browser, res),
-          subtitle: getCompatibilityString(versions)
+          subtitle: getCompatibilityString(versions),
+          icon: {
+            path: `./icons/${getBrowserIcon(browser)}.png`
+          }
         }
       ]
     },
     []
   )
 
-  return alfy.output([...items])
+  return alfy.output([
+    {
+      title: 'Open on caniuse.com',
+      subtitle: 'Show the full compatibility table in your browser',
+      icon: {
+        path: './icon.png'
+      }
+    },
+    ...items
+  ])
 }
 
 const filterFeatures = res => {
@@ -94,7 +139,7 @@ alfy
     }
   })
   .then(() => {
-    // exit quickly
+    // quick exit
     process.exit(0)
   })
   .catch(err => {

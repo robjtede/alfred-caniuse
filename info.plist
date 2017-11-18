@@ -75,11 +75,18 @@
 		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>200</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>100</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>browserlist</key>
+		<string>&gt; 1%, last 2 versions, Firefox ESR</string>
+	</dict>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string>https://robjte.de/</string>
 </dict>
