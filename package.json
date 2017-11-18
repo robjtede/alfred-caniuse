@@ -4,7 +4,9 @@
   "description": "Afred Can I Use Workflow",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
   },
   "repository": {
     "type": "git",

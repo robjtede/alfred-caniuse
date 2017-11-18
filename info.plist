@@ -7,18 +7,7 @@
 	<key>connections</key>
 	<dict>
 		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>556450DE-3A1F-4E71-A95F-7C3443C5B89A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>Rob Ede (@robjtede)</string>
@@ -56,7 +45,8 @@
 				<key>runningsubtext</key>
 				<string>Searching for "{query}"</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node ./list "$1"</string>
+				<string>./node_modules/.bin/run-node ./index "$1"
+</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -77,41 +67,15 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>556450DE-3A1F-4E71-A95F-7C3443C5B89A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>556450DE-3A1F-4E71-A95F-7C3443C5B89A</key>
-		<dict>
-			<key>xpos</key>
-			<integer>510</integer>
-			<key>ypos</key>
-			<integer>90</integer>
-		</dict>
 		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>320</integer>
 			<key>ypos</key>
 			<integer>90</integer>
 		</dict>
