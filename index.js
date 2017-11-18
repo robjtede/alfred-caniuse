@@ -5,6 +5,8 @@ const fs = require('fs')
 const alfy = require('alfy')
 const fzf = require('fuzzysearch')
 
+const getFeatureUrl = (featName) => `https://caniuse.com/#feat=${featName}`
+
 const getBrowserName = (browser, res) => {
   if (browser in res.agents) {
     return res.agents[browser].browser
@@ -87,8 +89,9 @@ const getCompatibility = res => {
           subtitle: getCompatibilityString(versions),
           icon: {
             path: `./icons/${getBrowserIcon(browser)}.png`
-          }
-        }
+          },
+          valid: false
+        },
       ]
     },
     []
@@ -100,7 +103,8 @@ const getCompatibility = res => {
       subtitle: 'Show the full compatibility table in your browser',
       icon: {
         path: './icon.png'
-      }
+      },
+      arg: getFeatureUrl(alfy.input)
     },
     ...items
   ])
@@ -112,12 +116,10 @@ const filterFeatures = res => {
       return fzf(alfy.input, name)
     })
     .map(([name, feat]) => {
-      const url = `https://caniuse.com/#feat=${name}`
-
       return {
         title: feat.title,
         subtitle: feat.description,
-        quicklookurl: url,
+        quicklookurl: getFeatureUrl(name),
         autocomplete: name,
         arg: name,
         valid: false

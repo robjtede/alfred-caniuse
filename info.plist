@@ -7,7 +7,18 @@
 	<key>connections</key>
 	<dict>
 		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Rob Ede (@robjtede)</string>
@@ -67,15 +78,41 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
 		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>100</integer>
 			<key>ypos</key>
 			<integer>100</integer>
 		</dict>
