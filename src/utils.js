@@ -31,9 +31,18 @@ const browserIcon = name => {
   return name in icons ? icons[name] : 'other'
 }
 
+const browserName = (browser, db) => {
+  if (browser in db.agents) {
+    return db.agents[browser].browser
+  } else {
+    return browser
+  }
+}
+
 const featureUrl = featName => `${caniuseRoot}/#feat=${featName}`
 
 module.exports = {
   browserIcon,
+  browserName,
   featureUrl
 }

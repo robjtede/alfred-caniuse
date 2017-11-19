@@ -99,7 +99,9 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>`browsersListConfig` is used to determine where "safe" check-marks appear on the compatibility tables.
+
+Test your config here: http://browserl.ist</string>
 	<key>uidata</key>
 	<dict>
 		<key>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</key>
@@ -119,11 +121,11 @@
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>browserlist</key>
-		<string>&gt; 1%, last 2 versions, Firefox ESR</string>
+		<key>browsersListConfig</key>
+		<string>&gt; 1%, last 2 versions, last 4 IE versions, Firefox ESR</string>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>0.1.0</string>
 	<key>webaddress</key>
 	<string>https://robjte.de/</string>
 </dict>

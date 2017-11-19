@@ -1,3 +1,5 @@
+const fzf = require('fuzzysearch')
+
 const { featureUrl } = require('./utils')
 
 const filterFeatures = (input, res) => {

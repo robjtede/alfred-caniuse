@@ -1,91 +1,130 @@
-const { browserIcon, featureUrl } = require('./utils')
+const { browserIcon, browserName, featureUrl } = require('./utils')
 
-const browserName = (browser, res) => {
-  if (browser in res.agents) {
-    return res.agents[browser].browser
-  } else {
-    return browser
+class SupportItem {
+  constructor({ browserId, featureId, db, browsersList }) {
+    this.browserId = browserId
+    this.featureId = featureId
+    this.db = db
+    this.browsersList = browsersList
+  }
+
+  get versionSupport() {
+    return Object.entries(this.db.data[this.featureId].stats[this.browserId])
+  }
+
+  get desiredVersionList() {
+    const desiredSupport = this.browsersList
+      .filter(browser => {
+        return browser.split(' ')[0] === this.browserId
+      })
+      .map(browser => {
+        return browser.split(' ')[1]
+      })
+
+    return desiredSupport
+  }
+
+  get desiredVersionSupport() {
+    const versionList = this.desiredVersionList
+
+    return this.versionSupport.filter(([version]) =>
+      versionList.includes(version)
+    )
+  }
+
+  get safeSupport() {
+    return this.desiredVersionSupport.every(
+      ([version, supported]) => supported === 'y'
+    )
+  }
+
+  get noSupport() {
+    return this.desiredVersionSupport.every(
+      ([version, supported]) => supported === 'n'
+    )
+  }
+
+  get supportString() {
+    if (this.safeSupport) {
+      return '✅️ Well Supported'
+    } else if (this.noSupport) {
+      return '❌️ Not Supported'
+    } else {
+      return '⚠️ Partial support'
+    }
+  }
+
+  get alfredItem() {
+    return {
+      title: browserName(this.browserId, this.db),
+      subtitle: this.supportString,
+      icon: {
+        path: `./icons/${browserIcon(this.browserId)}.png`
+      },
+      valid: false
+    }
   }
 }
 
-const firstUnprefixedVersion = versionSupport => {
-  const stat = versionSupport.find(([version, compatible]) => compatible.startsWith('y'))
+class SupportTable {
+  constructor({ featureId, db, browsersList }) {
+    if (!(featureId in db.data)) {
+      throw new Error(`"${featureId}" is not a valid feature identifier`)
+    }
 
-  if (stat) {
-    const [version] = stat
-    return version
-  } else {
-    return 'ERROR: probably has always been prefixed'
+    this.featureId = featureId
+    this.db = db
+    this.browsersList = browsersList
   }
-}
 
-const compatibilityString = stats => {
-  const [browser, versions] = stats
-  const versionSupport = Object.entries(versions)
+  get supportItems() {
+    const items = Object.entries(this.desiredVersionLists).map(
+      ([name, versions]) => {
+        return new SupportItem({
+          browserId: name,
+          featureId: this.featureId,
+          db: this.db,
+          browsersList: this.browsersList
+        })
+      }
+    )
 
-  const allSupported = versionSupport.every(
-    ([version, compatible]) => compatible === 'y'
-  )
-
-  const noneSupported = versionSupport.every(
-    ([version, compatible]) => compatible === 'n'
-  )
-
-  if (allSupported) {
-    return '✅️ Supported in all versions'
-  } else if (noneSupported) {
-    return '❌️ Not Supported'
-  } else {
-    return `⚠️ Supported since version ${firstUnprefixedVersion(
-      versionSupport
-    )}`
+    return items
   }
-}
 
-const supportInformation = (stats, res) => {
-  return {
-    // firstAnySupport: '0',
-    // firstUnprefixedSupport: firstUnprefixedVersion(stats),
-    compatibilityString: compatibilityString(stats)
+  get desiredVersionLists() {
+    const desiredSupport = this.browsersList.reduce((acc, info) => {
+      const [name, version] = info.split(' ')
+
+      return name in acc
+        ? Object.assign({}, acc, { [name]: [version, ...acc[name]] })
+        : Object.assign({}, acc, { [name]: [version] })
+    }, {})
+
+    return desiredSupport
   }
-}
 
-const supportTable = (input, res) => {
-  const feature = res.data[input]
-
-  const items = Object.entries(feature.stats).reduce(
-    (supportListAcc, stats) => {
-      const [browser, versionSupport] = stats
-      const supportInfo = supportInformation(stats, res)
-
-      return [
-        ...supportListAcc,
-        {
-          title: browserName(browser, res),
-          subtitle: supportInfo.compatibilityString,
-          icon: {
-            path: `./icons/${browserIcon(browser)}.png`
-          },
-          valid: false
-        }
-      ]
-    },
-    []
-  )
-
-  return [
-    {
-      title: 'Open on caniuse.com',
+  get caniuseLinkItem() {
+    return {
+      title: `Open "${this.featureId}" on caniuse.com`,
       subtitle: 'Show the full compatibility table in your browser',
       icon: {
         path: './icon.png'
       },
-      arg: featureUrl(input)
-    },
-    ...items
-  ]
+      arg: featureUrl(this.featureId)
+    }
+  }
+
+  get alfredSupportItems() {
+    return this.supportItems.map(supportItem => supportItem.alfredItem)
+  }
+
+  get alfredItems() {
+    return [this.caniuseLinkItem, ...this.alfredSupportItems]
+  }
 }
 
 module.exports = {
-  supportTable
+  SupportTable,
+  SupportItem
 }

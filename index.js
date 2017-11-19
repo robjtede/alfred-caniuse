@@ -1,11 +1,12 @@
 'use strict'
 
 const alfy = require('alfy')
-const fzf = require('fuzzysearch')
 const browserslist = require('browserslist')
 
-const { supportTable } = require('./src/support')
+const { SupportTable } = require('./src/support')
 const { filterFeatures } = require('./src/features')
+
+const { browsersListConfig } = process.env
 
 alfy
   .fetch('https://raw.githubusercontent.com/Fyrd/caniuse/master/data.json', {
@@ -13,8 +14,13 @@ alfy
   })
   .then(res => {
     if (alfy.input in res.data) {
-      const supportList = supportTable(alfy.input, res)
-      return alfy.output(supportList)
+      const supportTable = new SupportTable({
+        featureId: alfy.input,
+        db: res,
+        browsersList: browserslist(browsersListConfig)
+      })
+
+      return alfy.output(supportTable.alfredItems)
     } else {
       const featureSelectionList = filterFeatures(alfy.input, res)
       return alfy.output(featureSelectionList)
