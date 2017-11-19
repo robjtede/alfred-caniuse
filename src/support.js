@@ -88,7 +88,7 @@ class SupportItem {
     } else if (this.noSupport) {
       return '❌️ Not supported'
     } else if (this.partialSupport) {
-      // partial support
+      return `⚠️ Partial support`
     } else {
       if (this.firstFullSupportVersion) {
         return `⚠️ Support in versions >= ${this.firstFullSupportVersion}`
