@@ -10,7 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/init-package-json.git"
+    "url": "https://github.com/robjtede/alfred-caniuse.git"
+  },
+  "lint-staged": {
+    "*": ["eclint fix", "git add"],
+    "*.{js,md,json}": ["eclint fix", "prettier --write", "git add"]
   },
   "keywords": [
     "alfred",
@@ -27,6 +31,7 @@
   "license": "ISC",
   "dependencies": {
     "alfy": "^0.6.0",
+    "browserslist": "^2.9.0",
     "fuzzysearch": "^1.0.3"
   }
 }
