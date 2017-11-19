@@ -10,6 +10,7 @@
 
 **With easy updates**  
 The recommended way to install this workflow is using npm to allow easy updating when also using [alfred-updater](https://github.com/SamVerschueren/alfred-updater).
+
 ```shell
 $ npm install -g alfred-updater
 $ npm intsall -g alfred-caniuse

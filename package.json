@@ -1,7 +1,7 @@
 {
   "name": "alfred-caniuse",
   "version": "0.1.1",
-  "description": "Afred Can I Use Workflow",
+  "description": "caniuse.com search and quick reference",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
