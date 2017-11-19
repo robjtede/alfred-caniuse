@@ -38,25 +38,65 @@ class SupportItem {
     )
   }
 
+  get firstPartialSupportVersion() {
+    const [version] =
+      this.versionSupport.find(([_, supports]) => {
+        return supports.startsWith('a')
+      }) || []
+
+    if (version) {
+      return version
+    } else {
+      return
+    }
+  }
+
+  get firstFullSupportVersion() {
+    const [version] =
+      this.versionSupport.find(([_, supports]) => {
+        return supports.startsWith('y')
+      }) || []
+
+    if (version) {
+      return version
+    } else {
+      return
+    }
+  }
+
   get safeSupport() {
     return this.desiredVersionSupport.every(
-      ([version, supported]) => supported === 'y'
+      ([_, supported]) => supported.startsWith('y')
     )
   }
 
   get noSupport() {
     return this.desiredVersionSupport.every(
-      ([version, supported]) => supported === 'n'
+      ([_, supported]) => supported.startsWith('n')
+    )
+  }
+
+  get partialSupport() {
+    return this.desiredVersionSupport.every(
+      ([_, supported]) => supported.startsWith('p')
     )
   }
 
   get supportString() {
     if (this.safeSupport) {
-      return '✅️ Well Supported'
+      return '✅️ Well supported'
     } else if (this.noSupport) {
-      return '❌️ Not Supported'
+      return '❌️ Not supported'
+    } else if (this.partialSupport) {
+      //
     } else {
-      return '⚠️ Partial support'
+      if (this.firstFullSupportVersion) {
+        return `⚠️ Support in versions >= ${this.firstFullSupportVersion}`
+      } else {
+        return `⚠️ Partial support in versions >= ${
+          this.firstPartialSupportVersion
+        }`
+      }
     }
   }
 
