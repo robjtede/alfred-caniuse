@@ -31,18 +31,31 @@ const browserIcon = name => {
   return name in icons ? icons[name] : 'other'
 }
 
-const browserName = (browser, db) => {
-  if (browser in db.agents) {
-    return db.agents[browser].browser
+const browserName = (name, db) => {
+  if (name in db.agents) {
+    return db.agents[name].browser
   } else {
-    return browser
+    return name
   }
 }
 
 const featureUrl = featName => `${caniuseRoot}/#feat=${featName}`
 
+const marketShare = (browserId, db) => {
+  return Object.entries(db.agents[browserId].usage_global).reduce(
+    (tot, [version, share]) => tot + share,
+    0
+  )
+}
+
+const browserType = (name, db) => {
+  return db.agents[name].type
+}
+
 module.exports = {
   browserIcon,
   browserName,
-  featureUrl
+  browserType,
+  featureUrl,
+  marketShare
 }

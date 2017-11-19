@@ -1,4 +1,10 @@
-const { browserIcon, browserName, featureUrl } = require('./utils')
+const {
+  browserIcon,
+  browserName,
+  browserType,
+  featureUrl,
+  marketShare
+} = require('./utils')
 
 class SupportItem {
   constructor({ browserId, featureId, db, browsersList }) {
@@ -89,7 +95,21 @@ class SupportTable {
       }
     )
 
-    return items
+    const sorted = items.sort((a, b) => {
+      const aid = a.browserId
+      const bid = b.browserId
+
+      return marketShare(aid, this.db) < marketShare(bid, this.db) ? 1 : -1
+    })
+
+    return [
+      ...sorted.filter(
+        item => browserType(item.browserId, this.db) === 'desktop'
+      ),
+      ...sorted.filter(
+        item => browserType(item.browserId, this.db) === 'mobile'
+      )
+    ]
   }
 
   get desiredVersionLists() {
