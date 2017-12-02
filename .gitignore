@@ -48,3 +48,4 @@ jspm_packages
 
 .DS_Store
 /data.json
+/data.sample.json

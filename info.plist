@@ -125,7 +125,7 @@ Test your config here: http://browserl.ist</string>
 		<string>&gt; 1%, last 2 versions, last 4 IE versions, Firefox ESR</string>
 	</dict>
 	<key>version</key>
-	<string>0.1.0</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string>https://robjte.de/</string>
 </dict>
