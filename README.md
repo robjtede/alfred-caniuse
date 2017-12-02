@@ -13,7 +13,7 @@ The recommended way to install this workflow is using npm to allow easy updating
 
 ```shell
 $ npm install -g alfred-updater
-$ npm intsall -g alfred-caniuse
+$ npm install -g alfred-caniuse
 ```
 
 **Without easy updates**  
