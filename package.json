@@ -1,6 +1,6 @@
 {
   "name": "alfred-caniuse",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "caniuse.com search and quick reference",
   "main": "",
   "scripts": {
