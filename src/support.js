@@ -33,15 +33,15 @@ class SupportItem {
   get desiredVersionSupport() {
     const versionList = this.desiredVersionList
 
-    return this.versionSupport.filter(([version]) =>
+    return this.versionSupport.filter(([version, supported]) =>
       versionList.includes(version)
     )
   }
 
   get firstPartialSupportVersion() {
     const [version] =
-      this.versionSupport.find(([_, supports]) => {
-        return supports.startsWith('a')
+      this.versionSupport.find(([version, supported]) => {
+        return supported.startsWith('a')
       }) || []
 
     if (version) {
@@ -53,8 +53,8 @@ class SupportItem {
 
   get firstFullSupportVersion() {
     const [version] =
-      this.versionSupport.find(([_, supports]) => {
-        return supports.startsWith('y')
+      this.versionSupport.find(([version, supported]) => {
+        return supported.startsWith('y')
       }) || []
 
     if (version) {
@@ -65,20 +65,20 @@ class SupportItem {
   }
 
   get safeSupport() {
-    return this.desiredVersionSupport.every(
-      ([_, supported]) => supported.startsWith('y')
+    return this.desiredVersionSupport.every(([version, supported]) =>
+      supported.startsWith('y')
     )
   }
 
   get noSupport() {
-    return this.desiredVersionSupport.every(
-      ([_, supported]) => supported.startsWith('n')
+    return this.desiredVersionSupport.every(([version, supported]) =>
+      supported.startsWith('n')
     )
   }
 
   get partialSupport() {
-    return this.desiredVersionSupport.every(
-      ([_, supported]) => supported.startsWith('p')
+    return this.desiredVersionSupport.every(([version, supported]) =>
+      supported.startsWith('p')
     )
   }
 
