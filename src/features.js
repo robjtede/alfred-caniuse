@@ -33,7 +33,7 @@ const filterFeatures = (input, res) => {
   })
 
   return fuse
-    .search(input)
+    .search(input, 20)
     .filter((val, index) => index < 20)
     .map(result => {
       const { name, feature } = result.item

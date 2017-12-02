@@ -26,10 +26,6 @@ alfy
       return alfy.output(featureSelectionList)
     }
   })
-  .then(() => {
-    // quick exit
-    process.exit(0)
-  })
   .catch(err => {
     alfy.error(err.message)
   })
