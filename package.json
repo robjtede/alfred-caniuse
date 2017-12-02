@@ -2,7 +2,7 @@
   "name": "alfred-caniuse",
   "version": "0.2.0",
   "description": "caniuse.com search and quick reference",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",

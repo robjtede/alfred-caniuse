@@ -22,18 +22,18 @@ If you'd prefer to not use npm and forego the easy updates you can go download t
 ## Usage
 
 ```
-caniuse bdrs
+caniuse touch
 ```
 
-![](https://i.imgur.com/RFnM4VW.png)
+![](https://i.imgur.com/yPTEt85.png)
 
 Pressing enter or tab will autocomplete the item and display the concise support table.
 
 ```
-caniuse border-radius
+caniuse css-touch-action!
 ```
 
-![](https://i.imgur.com/jl6Tsas.png)
+![](https://i.imgur.com/Ku39XTe.png)
 
 ## Configuring
 
