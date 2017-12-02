@@ -12,7 +12,7 @@ const filterFeatures = (input, res) => {
     keys: [
       {
         name: 'name',
-        weight: 0.4,
+        weight: 0.4
       },
       {
         name: 'feature.title',
@@ -32,19 +32,22 @@ const filterFeatures = (input, res) => {
     maxPatternLength: 32
   })
 
-  return fuse.search(input).filter((val, index) => index < 20).map((result) => {
-    const {name, feature} = result.item
+  return fuse
+    .search(input)
+    .filter((val, index) => index < 20)
+    .map(result => {
+      const { name, feature } = result.item
 
-    return {
-      title: feature.title,
-      subtitle: feature.description,
-      quicklookurl: featureUrl(name),
-      autocomplete: name,
-      arg: name,
-      valid: false,
-      // debug: result
-    }
-  })
+      return {
+        title: feature.title,
+        subtitle: feature.description,
+        quicklookurl: featureUrl(name),
+        autocomplete: name,
+        arg: name,
+        valid: false
+        // debug: result
+      }
+    })
 }
 
 module.exports = {
