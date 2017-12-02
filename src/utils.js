@@ -62,6 +62,14 @@ const exactMatch = (input, db) => {
   }
 }
 
+const stripE = str => {
+  return Number.parseInt(str.slice(1), 10)
+}
+
+const sortByEra = (a, b) => {
+  return stripE(a) - stripE(b)
+}
+
 module.exports = {
   browserIcon,
   browserName,

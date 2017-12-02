@@ -1,3 +1,6 @@
+const alfy = require('alfy')
+
+const { transformVersionStats } = require('./transform')
 const { browserIcon, browserName } = require('./utils')
 
 class SupportItem {
@@ -9,7 +12,9 @@ class SupportItem {
   }
 
   get versionSupport() {
-    return Object.entries(this.db.data[this.featureId].stats[this.browserId])
+    return transformVersionStats(
+      this.db.data[this.featureId].stats[this.browserId]
+    )
   }
 
   get desiredVersionList() {
@@ -27,52 +32,42 @@ class SupportItem {
   get desiredVersionSupport() {
     const versionList = this.desiredVersionList
 
-    return this.versionSupport.filter(([version, supported]) =>
-      versionList.includes(version)
-    )
+    return this.versionSupport.filter(({ version, support }) => {
+      return versionList.includes(version)
+    })
   }
 
   get firstPartialSupportVersion() {
-    const [version] =
-      this.versionSupport.find(([version, supported]) => {
-        return supported.startsWith('a')
-      }) || []
+    const support = this.versionSupport.find(({ version, support }) => {
+      return support.status.short === 'a'
+    })
 
-    if (version) {
-      return version
-    } else {
-      return
-    }
+    return support ? support.version : undefined
   }
 
   get firstFullSupportVersion() {
-    const [version] =
-      this.versionSupport.find(([version, supported]) => {
-        return supported.startsWith('y')
-      }) || []
+    const support = this.versionSupport.find(({ version, support }) => {
+      return support.status.short === 'y'
+    })
 
-    if (version) {
-      return version
-    } else {
-      return
-    }
+    return support ? support.version : undefined
   }
 
   get safeSupport() {
-    return this.desiredVersionSupport.every(([version, supported]) =>
-      supported.startsWith('y')
+    return this.desiredVersionSupport.every(
+      ({ version, support }) => support.status.short === 'y'
     )
   }
 
   get noSupport() {
-    return this.desiredVersionSupport.every(([version, supported]) =>
-      supported.startsWith('n')
+    return this.desiredVersionSupport.every(
+      ({ version, support }) => support.status.short === 'n'
     )
   }
 
   get partialSupport() {
-    return this.desiredVersionSupport.every(([version, supported]) =>
-      supported.startsWith('p')
+    return this.desiredVersionSupport.every(
+      ({ version, support }) => support.status.short === 'a'
     )
   }
 
