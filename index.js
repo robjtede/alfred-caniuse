@@ -5,6 +5,7 @@ const browserslist = require('browserslist')
 
 const { SupportTable } = require('./src/support')
 const { filterFeatures } = require('./src/features')
+const { exactMatch } = require('./src/utils')
 
 const { browsersListConfig } = process.env
 
@@ -13,9 +14,11 @@ alfy
     maxAge: 3600 * 12
   })
   .then(res => {
-    if (alfy.input in res.data) {
+    const match = exactMatch(alfy.input, res.data)
+
+    if (match) {
       const supportTable = new SupportTable({
-        featureId: alfy.input,
+        featureId: match,
         db: res,
         browsersList: browserslist(browsersListConfig)
       })

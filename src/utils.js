@@ -52,10 +52,21 @@ const browserType = (name, db) => {
   return db.agents[name].type
 }
 
+const exactMatch = (input, db) => {
+  const truncated = input.slice(0, input.length - 1)
+
+  if (input.endsWith('!') && truncated in db) {
+    return truncated
+  } else {
+    return false
+  }
+}
+
 module.exports = {
   browserIcon,
   browserName,
   browserType,
+  exactMatch,
   featureUrl,
   marketShare
 }

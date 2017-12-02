@@ -42,7 +42,7 @@ const filterFeatures = (input, res) => {
         title: feature.title,
         subtitle: feature.description,
         quicklookurl: featureUrl(name),
-        autocomplete: name,
+        autocomplete: `${name}!`,
         arg: name,
         valid: false
         // debug: result
