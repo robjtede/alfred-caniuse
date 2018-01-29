@@ -1,10 +1,14 @@
-# alfred-caniuse
+<h1 align="center">
+  alfred-caniuse
+</h1>
 
-> An Alfred 3 workflow for searching and quickly previewing caniuse.com support
-> tables.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/robjtede/alfred-caniuse/master/alfred-caniuse.png" alt="alfred-caniuse logo" height="200">
+</p>
+
+> An Alfred 3 workflow for searching and quickly previewing caniuse.com support tables.
 >
 > Configurable "safety" checkmarks are shown next to browsers with good support of a feature.
-
 
 ## Installation
 
