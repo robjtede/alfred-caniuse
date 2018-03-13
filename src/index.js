@@ -1,12 +1,12 @@
 'use strict'
 
-const alfy = require('alfy')
-const browserslist = require('browserslist')
+import * as alfy from '@robjtede/alfy'
+import * as browserslist from 'browserslist'
 
-const { SupportTable } = require('./src/SupportTable')
-const { filterFeatures } = require('./src/features')
-const { transformRes } = require('./src/transform')
-const { exactMatch } = require('./src/utils')
+import { SupportTable } from './SupportTable'
+import { filterFeatures } from './features'
+import { transformRes } from './transform'
+import { exactMatch } from './utils'
 
 const { browsersListConfig } = process.env
 
@@ -22,7 +22,7 @@ alfy
       const supportTable = new SupportTable({
         featureId: match,
         db: res,
-        browsersList: browserslist(browsersListConfig)
+        browsersList: browserslist.default(browsersListConfig)
       })
 
       return alfy.output(supportTable.alfredItems)

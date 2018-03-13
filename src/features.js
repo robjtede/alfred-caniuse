@@ -1,8 +1,8 @@
-const Fuse = require('fuse.js')
+import * as Fuse from 'fuse.js'
 
-const { featureUrl } = require('./utils')
+import { featureUrl } from './utils'
 
-const filterFeatures = (input, res) => {
+export const filterFeatures = (input, res) => {
   const features = Object.entries(res.data).map(([name, feature]) => ({
     name,
     feature
@@ -48,8 +48,4 @@ const filterFeatures = (input, res) => {
         // debug: result
       }
     })
-}
-
-module.exports = {
-  filterFeatures
 }

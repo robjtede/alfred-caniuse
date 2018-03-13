@@ -1,6 +1,6 @@
-const caniuseRoot = 'https://caniuse.com'
+export const caniuseRoot = 'https://caniuse.com'
 
-const browserIcon = name => {
+export const browserIcon = name => {
   const icons = {
     firefox: 'firefox',
     and_ff: 'firefox',
@@ -31,7 +31,7 @@ const browserIcon = name => {
   return name in icons ? icons[name] : 'other'
 }
 
-const browserName = (name, db) => {
+export const browserName = (name, db) => {
   if (name in db.agents) {
     return db.agents[name].browser
   } else {
@@ -39,20 +39,20 @@ const browserName = (name, db) => {
   }
 }
 
-const featureUrl = featName => `${caniuseRoot}/#feat=${featName}`
+export const featureUrl = featName => `${caniuseRoot}/#feat=${featName}`
 
-const marketShare = (browserId, db) => {
+export const marketShare = (browserId, db) => {
   return Object.entries(db.agents[browserId].usage_global).reduce(
     (tot, [version, share]) => tot + share,
     0
   )
 }
 
-const browserType = (name, db) => {
+export const browserType = (name, db) => {
   return db.agents[name].type
 }
 
-const exactMatch = (input, db) => {
+export const exactMatch = (input, db) => {
   const truncated = input.slice(0, input.length - 1)
 
   if (input.endsWith('!') && truncated in db) {
@@ -62,19 +62,10 @@ const exactMatch = (input, db) => {
   }
 }
 
-const stripE = str => {
+export const stripE = str => {
   return Number.parseInt(str.slice(1), 10)
 }
 
-const sortByEra = (a, b) => {
+export const sortByEra = (a, b) => {
   return stripE(a) - stripE(b)
-}
-
-module.exports = {
-  browserIcon,
-  browserName,
-  browserType,
-  exactMatch,
-  featureUrl,
-  marketShare
 }

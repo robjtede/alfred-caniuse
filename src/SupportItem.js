@@ -1,9 +1,7 @@
-const alfy = require('alfy')
+import { transformVersionStats } from './transform'
+import { browserIcon, browserName } from './utils'
 
-const { transformVersionStats } = require('./transform')
-const { browserIcon, browserName } = require('./utils')
-
-class SupportItem {
+export class SupportItem {
   constructor({ browserId, featureId, db, browsersList }) {
     this.browserId = browserId
     this.featureId = featureId
@@ -99,8 +97,4 @@ class SupportItem {
       valid: false
     }
   }
-}
-
-module.exports = {
-  SupportItem
 }

@@ -1,7 +1,7 @@
-const { browserType, featureUrl, marketShare } = require('./utils')
-const { SupportItem } = require('./SupportItem')
+import { browserType, featureUrl, marketShare } from './utils'
+import { SupportItem } from './SupportItem'
 
-class SupportTable {
+export class SupportTable {
   constructor({ featureId, db, browsersList }) {
     if (!(featureId in db.data)) {
       throw new Error(`"${featureId}" is not a valid feature identifier`)
@@ -71,9 +71,4 @@ class SupportTable {
   get alfredItems() {
     return [this.caniuseLinkItem, ...this.alfredSupportItems]
   }
-}
-
-module.exports = {
-  SupportTable,
-  SupportItem
 }

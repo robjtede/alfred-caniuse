@@ -1,6 +1,6 @@
-const statsRe = /^([unpay])\s?([xd]\s??[xd]?)?\s?((?:#\d+\s?)*)$/i
+export const statsRe = /^([unpay])\s?([xd]\s??[xd]?)?\s?((?:#\d+\s?)*)$/i
 
-const supportStatuses = {
+export const supportStatuses = {
   u: {
     short: 'u',
     full: 'unknown',
@@ -28,7 +28,7 @@ const supportStatuses = {
   }
 }
 
-const supportStatusModifiers = {
+export const supportStatusModifiers = {
   d: {
     short: 'd',
     full: 'flagged',
@@ -41,7 +41,7 @@ const supportStatusModifiers = {
   }
 }
 
-const transformRes = res => {
+export const transformRes = res => {
   const data = res.data
 
   const stats = transformStats(data)
@@ -50,7 +50,7 @@ const transformRes = res => {
   return res
 }
 
-const transformStats = stats => {
+export const transformStats = stats => {
   return Object.entries(stats).map(([featureName, featureInfo]) => {
     const stats = transformBrowserStats(featureInfo.stats)
     featureInfo.stats = stats
@@ -59,21 +59,21 @@ const transformStats = stats => {
   })
 }
 
-const transformBrowserStats = browserStats => {
+export const transformBrowserStats = browserStats => {
   return Object.entries(browserStats).map(([browser, versions]) => ({
     browser,
     versions: transformVersionStats(versions)
   }))
 }
 
-const transformVersionStats = versionStats => {
+export const transformVersionStats = versionStats => {
   return Object.entries(versionStats).map(([version, supportStr]) => ({
     version,
     support: transformVersionSupportStr(supportStr)
   }))
 }
 
-const transformVersionSupportStr = supportStr => {
+export const transformVersionSupportStr = supportStr => {
   // console.log(supportStr)
 
   const [statsStr, status, modifiersStr, notesStr] = supportStr.match(statsRe)
@@ -92,12 +92,4 @@ const transformVersionSupportStr = supportStr => {
     modifiers,
     notes
   }
-}
-
-module.exports = {
-  transformRes,
-  transformStats,
-  transformBrowserStats,
-  transformVersionStats,
-  transformVersionSupportStr
 }

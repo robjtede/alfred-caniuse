@@ -56,7 +56,7 @@
 				<key>runningsubtext</key>
 				<string>Searching for "{query}"</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node ./index "$1"
+				<string>./node_modules/.bin/run-node ./dist/bundle.js "$1"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>

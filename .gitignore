@@ -47,5 +47,6 @@ jspm_packages
 .yarn-integrity
 
 .DS_Store
+.cache/
 /data.json
 /data.sample.json

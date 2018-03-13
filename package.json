@@ -2,16 +2,22 @@
   "name": "alfred-caniuse",
   "version": "0.2.0",
   "description": "caniuse.com search and quick reference",
-  "main": "index.js",
+  "main": "./dist/bundle.js",
+  "module": "./src/bundle.js",
   "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
-    "postinstall": "alfy-init",
+    "postinstall": "npm run build && alfy-init",
     "preuninstall": "alfy-cleanup"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/robjtede/alfred-caniuse.git"
+  },
+  "engines": {
+    "node": ">=6"
   },
   "lint-staged": {
     "*": ["eclint fix", "git add"],
@@ -31,14 +37,16 @@
   "author": "robjtede",
   "license": "ISC",
   "dependencies": {
-    "alfy": "^0.6.0",
-    "browserslist": "^2.9.1",
+    "@robjtede/alfy": "^0.7.0",
+    "browserslist": "^3.1.2",
     "fuse.js": "^3.2.0"
   },
   "devDependencies": {
-    "eclint": "^2.5.0",
+    "eclint": "^2.6.0",
     "husky": "^0.14.3",
-    "lint-staged": "^6.0.0",
-    "prettier": "^1.8.2"
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
   }
 }
