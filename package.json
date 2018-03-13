@@ -1,6 +1,6 @@
 {
   "name": "alfred-caniuse",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "caniuse.com search and quick reference",
   "main": "./dist/bundle.js",
   "module": "./src/bundle.js",
