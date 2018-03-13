@@ -3,13 +3,13 @@
   "version": "0.3.0",
   "description": "caniuse.com search and quick reference",
   "main": "./dist/bundle.js",
-  "module": "./src/bundle.js",
+  "module": "./src/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
-    "postinstall": "npm run build && alfy-init",
+    "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
   "repository": {
