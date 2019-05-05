@@ -1,132 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>bundleid</key>
-	<string>de.robjte.caniuse</string>
-	<key>connections</key>
-	<dict>
-		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-	</dict>
-	<key>createdby</key>
-	<string>Rob Ede (@robjtede)</string>
-	<key>description</key>
-	<string>caniuse.com search</string>
-	<key>disabled</key>
-	<true/>
-	<key>name</key>
-	<string>Can I Use</string>
-	<key>objects</key>
-	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>caniuse</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>Searching for "{query}"</string>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node ./dist/bundle.js "$1"
+  <dict>
+    <key>bundleid</key>
+    <string>de.robjte.caniuse</string>
+    <key>connections</key>
+    <dict>
+      <key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
+      <array>
+        <dict>
+          <key>destinationuid</key>
+          <string>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</string>
+          <key>modifiers</key>
+          <integer>0</integer>
+          <key>modifiersubtext</key>
+          <string/>
+          <key>vitoclose</key>
+          <false/>
+        </dict>
+      </array>
+    </dict>
+    <key>createdby</key>
+    <string>Rob Ede (@robjtede)</string>
+    <key>description</key>
+    <string>caniuse.com search</string>
+    <key>disabled</key>
+    <false/>
+    <key>name</key>
+    <string>Can I Use</string>
+    <key>objects</key>
+    <array>
+      <dict>
+        <key>config</key>
+        <dict>
+          <key>alfredfiltersresults</key>
+          <false/>
+          <key>alfredfiltersresultsmatchmode</key>
+          <integer>0</integer>
+          <key>argumenttrimmode</key>
+          <integer>0</integer>
+          <key>argumenttype</key>
+          <integer>0</integer>
+          <key>escaping</key>
+          <integer>102</integer>
+          <key>keyword</key>
+          <string>caniuse</string>
+          <key>queuedelaycustom</key>
+          <integer>3</integer>
+          <key>queuedelayimmediatelyinitially</key>
+          <true/>
+          <key>queuedelaymode</key>
+          <integer>0</integer>
+          <key>queuemode</key>
+          <integer>2</integer>
+          <key>runningsubtext</key>
+          <string>Searching for "{query}"</string>
+          <key>script</key>
+          <string>./node_modules/.bin/run-node ./dist/bundle.js "$1"
 </string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Quick reference for HTML5 &amp; CSS3 support tables.</string>
-				<key>title</key>
-				<string>Search Can I use...</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-	</array>
-	<key>readme</key>
-	<string>`browsersListConfig` is used to determine where "safe" check-marks appear on the compatibility tables.
+          <key>scriptargtype</key>
+          <integer>1</integer>
+          <key>scriptfile</key>
+          <string/>
+          <key>subtext</key>
+          <string>Update available: 0.4.0 → 0.4.1. Run `npm install -g alfred-caniuse`</string>
+          <key>title</key>
+          <string>Search Can I use...</string>
+          <key>type</key>
+          <integer>0</integer>
+          <key>withspace</key>
+          <true/>
+        </dict>
+        <key>type</key>
+        <string>alfred.workflow.input.scriptfilter</string>
+        <key>uid</key>
+        <string>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</string>
+        <key>version</key>
+        <integer>2</integer>
+      </dict>
+      <dict>
+        <key>config</key>
+        <dict>
+          <key>browser</key>
+          <string/>
+          <key>spaces</key>
+          <string/>
+          <key>url</key>
+          <string>{query}</string>
+          <key>utf8</key>
+          <true/>
+        </dict>
+        <key>type</key>
+        <string>alfred.workflow.action.openurl</string>
+        <key>uid</key>
+        <string>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</string>
+        <key>version</key>
+        <integer>1</integer>
+      </dict>
+    </array>
+    <key>readme</key>
+    <string>`browsersListConfig` is used to determine where "safe" check-marks appear on the compatibility tables.
 
 Test your config here: http://browserl.ist</string>
-	<key>uidata</key>
-	<dict>
-		<key>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</key>
-		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
-			<key>ypos</key>
-			<integer>100</integer>
-		</dict>
-		<key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
-		<dict>
-			<key>xpos</key>
-			<integer>100</integer>
-			<key>ypos</key>
-			<integer>100</integer>
-		</dict>
-	</dict>
-	<key>variables</key>
-	<dict>
-		<key>browsersListConfig</key>
-		<string>&gt; 1%, last 2 versions, last 4 IE versions, Firefox ESR</string>
-	</dict>
-	<key>version</key>
-	<string>0.2.0</string>
-	<key>webaddress</key>
-	<string>https://robjte.de/</string>
-</dict>
+    <key>uidata</key>
+    <dict>
+      <key>02DF8359-FC38-40E7-9DD4-FE7046BE1A0F</key>
+      <dict>
+        <key>xpos</key>
+        <integer>300</integer>
+        <key>ypos</key>
+        <integer>100</integer>
+      </dict>
+      <key>AF3322F5-CEBF-41C6-867C-B0DC08D8BDFA</key>
+      <dict>
+        <key>xpos</key>
+        <integer>100</integer>
+        <key>ypos</key>
+        <integer>100</integer>
+      </dict>
+    </dict>
+    <key>variables</key>
+    <dict>
+      <key>browsersListConfig</key>
+      <string>&gt; 1%, last 2 versions, last 4 IE versions, Firefox ESR</string>
+    </dict>
+    <key>version</key>
+    <string>0.2.0</string>
+    <key>webaddress</key>
+    <string>https://robjte.de/</string>
+  </dict>
 </plist>

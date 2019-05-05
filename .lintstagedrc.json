@@ -1,0 +1,4 @@
+{
+  "*": ["eclint fix", "git add"],
+  "*.{js,json}": ["eclint fix", "prettier --write", "git add"]
+}

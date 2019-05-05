@@ -1,11 +1,10 @@
 'use strict'
 
 import * as alfy from '@robjtede/alfy'
-import * as browserslist from 'browserslist'
+import browserslist from 'browserslist'
 
 import { SupportTable } from './SupportTable'
 import { filterFeatures } from './features'
-import { transformRes } from './transform'
 import { exactMatch } from './utils'
 
 const { browsersListConfig } = process.env
@@ -22,7 +21,7 @@ alfy
       const supportTable = new SupportTable({
         featureId: match,
         db: res,
-        browsersList: browserslist.default(browsersListConfig)
+        browsersList: browserslist(browsersListConfig)
       })
 
       return alfy.output(supportTable.alfredItems)
