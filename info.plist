@@ -63,7 +63,7 @@
           <key>scriptfile</key>
           <string/>
           <key>subtext</key>
-          <string>Update available: 0.4.0 → 0.4.1. Run `npm install -g alfred-caniuse`</string>
+          <string>Quick reference for HTML5 &amp; CSS3 support tables.</string>
           <key>title</key>
           <string>Search Can I use...</string>
           <key>type</key>
