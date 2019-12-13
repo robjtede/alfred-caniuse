@@ -100,7 +100,6 @@
     </array>
     <key>readme</key>
     <string>`browsersListConfig` is used to determine where "safe" check-marks appear on the compatibility tables.
-
 Test your config here: http://browserl.ist</string>
     <key>uidata</key>
     <dict>
