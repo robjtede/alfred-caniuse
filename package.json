@@ -1,6 +1,6 @@
 {
   "name": "alfred-caniuse",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "caniuse.com search and quick reference",
   "main": "./dist/bundle.js",
   "module": "./src/index.js",
@@ -9,7 +9,8 @@
     "build:dev": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "alfy-init",
-    "preuninstall": "alfy-cleanup"
+    "preuninstall": "alfy-cleanup",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -33,15 +34,15 @@
   "license": "ISC",
   "dependencies": {
     "@robjtede/alfy": "^0.8.0",
-    "browserslist": "^4.5.6",
-    "fuse.js": "^3.4.4"
+    "browserslist": "^4.11.1",
+    "fuse.js": "^3.6.1"
   },
   "devDependencies": {
     "eclint": "^2.8.1",
-    "husky": "^2.2.0",
-    "lint-staged": "^8.1.6",
-    "prettier": "^1.17.0",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.2"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

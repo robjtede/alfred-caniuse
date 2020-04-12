@@ -11,9 +11,9 @@ const { browsersListConfig } = process.env
 
 alfy
   .fetch('https://raw.githubusercontent.com/Fyrd/caniuse/master/data.json', {
-    maxAge: 3600 * 12
+    maxAge: 3600 * 12,
   })
-  .then(res => {
+  .then((res) => {
     // console.log(JSON.stringify(res))
     const match = exactMatch(alfy.input, res.data)
 
@@ -21,7 +21,7 @@ alfy
       const supportTable = new SupportTable({
         featureId: match,
         db: res,
-        browsersList: browserslist(browsersListConfig)
+        browsersList: browserslist(browsersListConfig),
       })
 
       return alfy.output(supportTable.alfredItems)

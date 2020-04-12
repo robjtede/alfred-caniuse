@@ -1,12 +1,12 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   target: 'node',
   node: {
     __filename: true,
-    __dirname: true
+    __dirname: true,
   },
-  externals: ['electron']
+  externals: ['electron'],
 }

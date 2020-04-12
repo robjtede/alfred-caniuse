@@ -17,10 +17,10 @@ export class SupportItem {
 
   get desiredVersionList() {
     const desiredSupport = this.browsersList
-      .filter(browser => {
+      .filter((browser) => {
         return browser.split(' ')[0] === this.browserId
       })
-      .map(browser => {
+      .map((browser) => {
         return browser.split(' ')[1]
       })
 
@@ -80,9 +80,7 @@ export class SupportItem {
       if (this.firstFullSupportVersion) {
         return `⚠️ Support in versions >= ${this.firstFullSupportVersion}`
       } else {
-        return `⚠️ Partial support in versions >= ${
-          this.firstPartialSupportVersion
-        }`
+        return `⚠️ Partial support in versions >= ${this.firstPartialSupportVersion}`
       }
     }
   }
@@ -92,9 +90,9 @@ export class SupportItem {
       title: browserName(this.browserId, this.db),
       subtitle: this.supportString,
       icon: {
-        path: `./icons/${browserIcon(this.browserId)}.png`
+        path: `./icons/${browserIcon(this.browserId)}.png`,
       },
-      valid: false
+      valid: false,
     }
   }
 }
