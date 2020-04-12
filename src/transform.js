@@ -4,44 +4,44 @@ export const supportStatuses = {
   u: {
     short: 'u',
     full: 'unknown',
-    code: -1
+    code: -1,
   },
   n: {
     short: 'n',
     full: 'unsupported',
-    code: 0
+    code: 0,
   },
   p: {
     short: 'p',
     full: 'polyfillable',
-    code: 1
+    code: 1,
   },
   a: {
     short: 'a',
     full: 'partial',
-    code: 2
+    code: 2,
   },
   y: {
     short: 'y',
     full: 'supported',
-    code: 3
-  }
+    code: 3,
+  },
 }
 
 export const supportStatusModifiers = {
   d: {
     short: 'd',
     full: 'flagged',
-    code: 1
+    code: 1,
   },
   x: {
     short: 'x',
     full: 'prefixed',
-    code: 2
-  }
+    code: 2,
+  },
 }
 
-export const transformRes = res => {
+export const transformRes = (res) => {
   const data = res.data
 
   const stats = transformStats(data)
@@ -50,7 +50,7 @@ export const transformRes = res => {
   return res
 }
 
-export const transformStats = stats => {
+export const transformStats = (stats) => {
   return Object.entries(stats).map(([featureName, featureInfo]) => {
     const stats = transformBrowserStats(featureInfo.stats)
     featureInfo.stats = stats
@@ -59,37 +59,37 @@ export const transformStats = stats => {
   })
 }
 
-export const transformBrowserStats = browserStats => {
+export const transformBrowserStats = (browserStats) => {
   return Object.entries(browserStats).map(([browser, versions]) => ({
     browser,
-    versions: transformVersionStats(versions)
+    versions: transformVersionStats(versions),
   }))
 }
 
-export const transformVersionStats = versionStats => {
+export const transformVersionStats = (versionStats) => {
   return Object.entries(versionStats).map(([version, supportStr]) => ({
     version,
-    support: transformVersionSupportStr(supportStr)
+    support: transformVersionSupportStr(supportStr),
   }))
 }
 
-export const transformVersionSupportStr = supportStr => {
+export const transformVersionSupportStr = (supportStr) => {
   // console.log(supportStr)
 
   const [statsStr, status, modifiersStr, notesStr] = supportStr.match(statsRe)
 
   const notes = notesStr
-    ? notesStr.split(' ').map(val => Number.parseInt(val.slice(1)))
+    ? notesStr.split(' ').map((val) => Number.parseInt(val.slice(1)))
     : []
 
   const modifiers = {
     flagged: modifiersStr ? modifiersStr.includes('d') : false,
-    prefixed: modifiersStr ? modifiersStr.includes('x') : false
+    prefixed: modifiersStr ? modifiersStr.includes('x') : false,
   }
 
   return {
     status: supportStatuses[status],
     modifiers,
-    notes
+    notes,
   }
 }

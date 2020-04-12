@@ -19,7 +19,7 @@ export class SupportTable {
           browserId: name,
           featureId: this.featureId,
           db: this.db,
-          browsersList: this.browsersList
+          browsersList: this.browsersList,
         })
       }
     )
@@ -33,11 +33,11 @@ export class SupportTable {
 
     return [
       ...sorted.filter(
-        item => browserType(item.browserId, this.db) === 'desktop'
+        (item) => browserType(item.browserId, this.db) === 'desktop'
       ),
       ...sorted.filter(
-        item => browserType(item.browserId, this.db) === 'mobile'
-      )
+        (item) => browserType(item.browserId, this.db) === 'mobile'
+      ),
     ]
   }
 
@@ -58,14 +58,14 @@ export class SupportTable {
       title: `Open "${this.featureId}" on caniuse.com`,
       subtitle: 'Show the full compatibility table in your browser',
       icon: {
-        path: './icon.png'
+        path: './icon.png',
       },
-      arg: featureUrl(this.featureId)
+      arg: featureUrl(this.featureId),
     }
   }
 
   get alfredSupportItems() {
-    return this.supportItems.map(supportItem => supportItem.alfredItem)
+    return this.supportItems.map((supportItem) => supportItem.alfredItem)
   }
 
   get alfredItems() {

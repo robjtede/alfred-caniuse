@@ -1,6 +1,6 @@
 export const caniuseRoot = 'https://caniuse.com'
 
-export const browserIcon = name => {
+export const browserIcon = (name) => {
   const icons = {
     firefox: 'firefox',
     and_ff: 'firefox',
@@ -25,7 +25,7 @@ export const browserIcon = name => {
     android: 'android',
     baidu: 'baidu',
     samsung: 'samsung',
-    bb: 'other'
+    bb: 'other',
   }
 
   return name in icons ? icons[name] : 'other'
@@ -39,7 +39,7 @@ export const browserName = (name, db) => {
   }
 }
 
-export const featureUrl = featName => `${caniuseRoot}/#feat=${featName}`
+export const featureUrl = (featName) => `${caniuseRoot}/#feat=${featName}`
 
 export const marketShare = (browserId, db) => {
   return Object.entries(db.agents[browserId].usage_global).reduce(
@@ -62,7 +62,7 @@ export const exactMatch = (input, db) => {
   }
 }
 
-export const stripE = str => {
+export const stripE = (str) => {
   return Number.parseInt(str.slice(1), 10)
 }
 

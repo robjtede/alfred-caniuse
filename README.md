@@ -23,7 +23,6 @@ $ npm install -g alfred-caniuse
 **Without easy updates**  
 If you'd prefer to not use npm and forego the easy updates you can go download the latest workflow from the [releases page](https://github.com/robjtede/alfred-caniuse/releases).
 
-
 ## Usage
 
 ```
@@ -39,7 +38,6 @@ caniuse css-touch-action!
 ```
 
 ![](https://i.imgur.com/Ku39XTe.png)
-
 
 ## Configuring
 

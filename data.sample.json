@@ -1643,19 +1643,16 @@
   "data": {
     "svg-fonts": {
       "title": "SVG fonts",
-      "description":
-        "Method of using fonts defined as SVG shapes. Removed from [SVG 2.0](http://www.w3.org/TR/SVG2/changes.html#fonts) and considered as a deprecated feature with support being removed from browsers.",
+      "description": "Method of using fonts defined as SVG shapes. Removed from [SVG 2.0](http://www.w3.org/TR/SVG2/changes.html#fonts) and considered as a deprecated feature with support being removed from browsers.",
       "spec": "http://www.w3.org/TR/SVG/fonts.html",
       "status": "unoff",
       "links": [
         {
-          "url":
-            "http://jeremie.patonnier.net/post/2011/02/07/Why-are-SVG-Fonts-so-different",
+          "url": "http://jeremie.patonnier.net/post/2011/02/07/Why-are-SVG-Fonts-so-different",
           "title": "Blog post"
         },
         {
-          "url":
-            "http://opentype.info/blog/2010/04/13/the-ipad-and-svg-fonts-in-mobile-safari/",
+          "url": "http://opentype.info/blog/2010/04/13/the-ipad-and-svg-fonts-in-mobile-safari/",
           "title": "Blog post on usage for iPad"
         }
       ],
@@ -1941,8 +1938,7 @@
       },
       "notes": "",
       "notes_by_num": {
-        "1":
-          "Chrome 38 and newer support SVG fonts only on Windows Vista and XP.",
+        "1": "Chrome 38 and newer support SVG fonts only on Windows Vista and XP.",
         "2": "Supported in Opera Mini in SVG images only, not in HTML."
       },
       "usage_perc_y": 24.43,
@@ -1958,14 +1954,12 @@
   },
   "css-grid": {
     "title": "CSS Grid Layout",
-    "description":
-      "Method of using a grid concept to lay out content, providing a mechanism for authors to divide available space for layout into columns and rows using a set of predictable sizing behaviors. Includes support for all `grid-*` properties and the `fr` unit.",
+    "description": "Method of using a grid concept to lay out content, providing a mechanism for authors to divide available space for layout into columns and rows using a set of predictable sizing behaviors. Includes support for all `grid-*` properties and the `fr` unit.",
     "spec": "https://www.w3.org/TR/css3-grid-layout/",
     "status": "cr",
     "links": [
       {
-        "url":
-          "http://blogs.msdn.com/b/ie/archive/2011/04/14/ie10-platform-preview-and-css-features-for-adaptive-layouts.aspx",
+        "url": "http://blogs.msdn.com/b/ie/archive/2011/04/14/ie10-platform-preview-and-css-features-for-adaptive-layouts.aspx",
         "title": "IE Blog post"
       },
       {
@@ -1985,14 +1979,12 @@
         "title": "Polyfill based on new spec"
       },
       {
-        "url":
-          "https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/",
+        "url": "https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/",
         "title": "WebKit Blog post"
       },
       {
         "url": "https://gridbyexample.com/",
-        "title":
-          "Css Grid By Example: Everything you need to learn CSS Grid Layout"
+        "title": "Css Grid By Example: Everything you need to learn CSS Grid Layout"
       },
       {
         "url": "https://mozilladevelopers.github.io/playground/",
@@ -2282,22 +2274,17 @@
     },
     "notes": "",
     "notes_by_num": {
-      "1":
-        "Enabled in Chrome through the \"experimental Web Platform features\" flag in chrome://flags",
-      "2":
-        "Partial support in IE refers to supporting an [older version](https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/) of the specification.",
+      "1": "Enabled in Chrome through the \"experimental Web Platform features\" flag in chrome://flags",
+      "2": "Partial support in IE refers to supporting an [older version](https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/) of the specification.",
       "3": "Enabled in Firefox through the `layout.css.grid.enabled ` flag",
-      "4":
-        "There are some bugs with overflow ([1356820](https://bugzilla.mozilla.org/show_bug.cgi?id=1356820), [1348857](https://bugzilla.mozilla.org/show_bug.cgi?id=1348857), [1350925](https://bugzilla.mozilla.org/show_bug.cgi?id=1350925))",
-      "5":
-        "Enabled in Edge through the \"Enable Unprefixed CSS Grid Layout\" flag in about:flags"
+      "4": "There are some bugs with overflow ([1356820](https://bugzilla.mozilla.org/show_bug.cgi?id=1356820), [1348857](https://bugzilla.mozilla.org/show_bug.cgi?id=1348857), [1350925](https://bugzilla.mozilla.org/show_bug.cgi?id=1350925))",
+      "5": "Enabled in Edge through the \"Enable Unprefixed CSS Grid Layout\" flag in about:flags"
     },
     "usage_perc_y": 69.57,
     "usage_perc_a": 5.77,
     "ucprefix": false,
     "parent": "",
-    "keywords":
-      "grids,grid-row,grid-column,grid-template,display:grid,inline-grid,fr unit,fractional unit",
+    "keywords": "grids,grid-row,grid-column,grid-template,display:grid,inline-grid,fr unit,fractional unit",
     "ie_id": "cssgridlayout",
     "chrome_id": "4589636412243968",
     "firefox_id": "css-grid-layout",
@@ -2305,8 +2292,7 @@
   },
   "webm": {
     "title": "WebM video format",
-    "description":
-      "Multimedia format designed to provide a royalty-free, high-quality open video compression format for use with HTML5 video. WebM supports the video codec VP8 and VP9.",
+    "description": "Multimedia format designed to provide a royalty-free, high-quality open video compression format for use with HTML5 video. WebM supports the video codec VP8 and VP9.",
     "spec": "https://www.webmproject.org",
     "status": "other",
     "links": [
@@ -2315,8 +2301,7 @@
         "title": "Codec for IE9 support"
       },
       {
-        "url":
-          "https://www.broken-links.com/2010/09/01/playing-webm-in-safari-with-plugins/",
+        "url": "https://www.broken-links.com/2010/09/01/playing-webm-in-safari-with-plugins/",
         "title": "Info on supporting WebM in Safari"
       },
       {
@@ -2324,8 +2309,7 @@
         "title": "Official website"
       },
       {
-        "url":
-          "https://raw.github.com/phiggins42/has.js/master/detect/video.js#video-webm",
+        "url": "https://raw.github.com/phiggins42/has.js/master/detect/video.js#video-webm",
         "title": "has.js test"
       },
       {
@@ -2614,8 +2598,7 @@
         "7.12": "y"
       }
     },
-    "notes":
-      "Will work in IE9+ and Safari/MacOSX provided the user has the WebM codecs installed. Partial support indicates that at least one codec is supported but not all. MS Edge supports VP9 from MSE sources, also progressive sources are not supported by Edge.",
+    "notes": "Will work in IE9+ and Safari/MacOSX provided the user has the WebM codecs installed. Partial support indicates that at least one codec is supported but not all. MS Edge supports VP9 from MSE sources, also progressive sources are not supported by Edge.",
     "notes_by_num": {},
     "usage_perc_y": 72.84,
     "usage_perc_a": 5.32,
@@ -2629,8 +2612,7 @@
   },
   "streams": {
     "title": "Streams",
-    "description":
-      "Method of creating, composing, and consuming streams of data, that map efficiently to low-level I/O primitives, and allow easy composition with built-in backpressure and queuing.",
+    "description": "Method of creating, composing, and consuming streams of data, that map efficiently to low-level I/O primitives, and allow easy composition with built-in backpressure and queuing.",
     "spec": "https://streams.spec.whatwg.org/",
     "status": "ls",
     "links": [
@@ -2932,8 +2914,7 @@
     "notes_by_num": {
       "1": "IE implements a different API than the one from WHATWG.",
       "2": "Only basic read support.",
-      "3":
-        "Disabled by default behind the `javascript.options.streams` and `dom.streams.enabled` flags. ",
+      "3": "Disabled by default behind the `javascript.options.streams` and `dom.streams.enabled` flags. ",
       "4": "No support for BYOB (\"bring your own buffer\") stream readers.",
       "5": "No support for `WritableStream`.",
       "6": "No support for the `pipeTo` or `pipeThrough` methods"
@@ -2950,8 +2931,7 @@
   },
   "flexbox": {
     "title": "CSS Flexible Box Layout Module",
-    "description":
-      "Method of positioning elements in horizontal or vertical stacks. Support includes all properties prefixed with `flex`, as well as `display: flex`, `display: inline-flex`, `align-content`, `align-items`, `align-self`, `justify-content` and `order`.",
+    "description": "Method of positioning elements in horizontal or vertical stacks. Support includes all properties prefixed with `flex`, as well as `display: flex`, `display: inline-flex`, `align-content`, `align-items`, `align-self`, `justify-content` and `order`.",
     "spec": "https://www.w3.org/TR/css3-flexbox/",
     "status": "cr",
     "links": [
@@ -2960,13 +2940,11 @@
         "title": "Flexbox CSS generator"
       },
       {
-        "url":
-          "http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html",
+        "url": "http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html",
         "title": "Article on using the latest spec"
       },
       {
-        "url":
-          "https://dev.opera.com/articles/view/advanced-cross-browser-flexbox/",
+        "url": "https://dev.opera.com/articles/view/advanced-cross-browser-flexbox/",
         "title": "Tutorial on cross-browser support"
       },
       {
@@ -2994,8 +2972,7 @@
         "title": "Ecligrid - Mobile first flexbox grid system"
       },
       {
-        "url":
-          "http://gedd.ski/post/the-difference-between-width-and-flex-basis/",
+        "url": "http://gedd.ski/post/the-difference-between-width-and-flex-basis/",
         "title": "The Difference Between Width and Flex-Basis"
       }
     ],
@@ -3280,23 +3257,18 @@
         "7.12": "y"
       }
     },
-    "notes":
-      "Most partial support refers to supporting an [older version](https://www.w3.org/TR/2009/WD-css3-flexbox-20090723/) of the specification or an [older syntax](https://www.w3.org/TR/2012/WD-css3-flexbox-20120322/).",
+    "notes": "Most partial support refers to supporting an [older version](https://www.w3.org/TR/2009/WD-css3-flexbox-20090723/) of the specification or an [older syntax](https://www.w3.org/TR/2012/WD-css3-flexbox-20120322/).",
     "notes_by_num": {
-      "1":
-        "Only supports the [old flexbox](https://www.w3.org/TR/2009/WD-css3-flexbox-20090723) specification and does not support wrapping.",
-      "2":
-        "Only supports the [2012 syntax](https://www.w3.org/TR/2012/WD-css3-flexbox-20120322/)",
+      "1": "Only supports the [old flexbox](https://www.w3.org/TR/2009/WD-css3-flexbox-20090723) specification and does not support wrapping.",
+      "2": "Only supports the [2012 syntax](https://www.w3.org/TR/2012/WD-css3-flexbox-20120322/)",
       "3": "Does not support flex-wrap, flex-flow or align-content properties",
-      "4":
-        "Partial support is due to large amount of bugs present (see known issues)"
+      "4": "Partial support is due to large amount of bugs present (see known issues)"
     },
     "usage_perc_y": 85.09,
     "usage_perc_a": 12.31,
     "ucprefix": false,
     "parent": "",
-    "keywords":
-      "flex-box,flex-direction,flex-wrap,flex-flow,flex-grow,flex-basis,display:flex,flex box",
+    "keywords": "flex-box,flex-direction,flex-wrap,flex-flow,flex-grow,flex-basis,display:flex,flex box",
     "ie_id": "flexbox",
     "chrome_id": "4837301406400512",
     "firefox_id": "",
