@@ -5,16 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.6.0] - 2020-04-12
-
-### Fixed
-
-- displaying results by updating browserlist
+## [0.6.0] - 2020-04-14
 
 ### Changed
 
 - upgrading dependencies
-- all source files formatting changed due to prettier v2
+
+### Fixed
+
+- displaying results by updating browserlist
 
 ## [0.5.1] - 2019-05-05
 
@@ -65,6 +64,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Find and filter features from caniuse.com
 - See simplified support tables based on a browserslist config
 
+[0.6.0]: https://github.com/robjtede/monux/compare/v0.5.1...v0.6.0
+[0.5.1]: https://github.com/robjtede/monux/compare/v0.5.0...v0.5.1
+[0.5.0]: https://github.com/robjtede/monux/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robjtede/monux/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/robjtede/monux/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/robjtede/monux/compare/v0.1.1...v0.2.0
