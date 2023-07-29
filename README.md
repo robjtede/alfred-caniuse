@@ -10,6 +10,10 @@
 >
 > Configurable "safety" checkmarks are shown next to browsers with good support of a feature.
 
+## Call For Maintainers
+
+I (@robjtede) am not active in the web frontend world any more. I would consider handing this off to someone if there is interest. You can email me or DM me on Discord (@rojtede there too).
+
 ## Installation
 
 **With easy updates**  
